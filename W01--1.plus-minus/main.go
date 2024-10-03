@@ -17,7 +17,21 @@ import (
 
 func plusMinus(arr []int32) {
 	// Write your code here
+	var positives, negatives, zeros = 0, 0, 0
+	for _, v := range arr {
+		switch {
+		case v > 0:
+			positives++
+		case v < 0:
+			negatives++
+		case v == 0:
+			zeros++
+		}
 
+	}
+	fmt.Println(float64(positives) / float64(len(arr)))
+	fmt.Println(float64(negatives) / float64(len(arr)))
+	fmt.Println(float64(zeros) / float64(len(arr)))
 }
 
 func main() {
