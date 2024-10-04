@@ -16,7 +16,7 @@ import (
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-func miniMaxSum(arr []int) {
+func miniMaxSum(arr []int32) {
 	// Write your code here
 	// fmt.Println(arr)
 	sort.Slice(arr, func(i, j int) bool {
@@ -25,10 +25,10 @@ func miniMaxSum(arr []int) {
 	fmt.Println(SliceSum(arr[:len(arr)-1]), SliceSum(arr[1:]))
 
 }
-func SliceSum(arr []int) int {
-	var sum int = 0
+func SliceSum(arr []int32) int64 {
+	var sum int64 = 0
 	for _, v := range arr {
-		sum += v
+		sum += int64(v)
 	}
 	return sum
 
@@ -39,12 +39,12 @@ func main() {
 
 	arrTemp := strings.Split(strings.TrimSpace(readLine(reader)), " ")
 
-	var arr []int
+	var arr []int32
 
 	for i := 0; i < 5; i++ {
 		arrItemTemp, err := strconv.ParseInt(arrTemp[i], 10, 64)
 		checkError(err)
-		arrItem := int(arrItemTemp)
+		arrItem := int32(arrItemTemp)
 		arr = append(arr, arrItem)
 	}
 
